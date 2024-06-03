@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/popup.css"/>
+    <title>PB-KIOSK</title>
+</head>
+<body>
+    <div id="popup-container">
+        <p id="bread-name"></p>
+        <script type="text/javascript">
+            document.getElementById("bread-name").innerText = opener.document.getElementById("label-container").childNodes[0].innerText
+            + " " + opener.document.getElementById("label-container").childNodes[1].innerText;
+        </script>
+        <p>담으시겠습니까?</p>
+        <p>
+            <button class="numCount" type="button" onclick='count("plus")'>+</button>
+            <div id="result">1</div>
+            <button class="numCount" type="button" onclick='count("minus")'>-</button>
+        </p>
+        <p>
+            <button type="button" onclick="addBreadObj()">담기</button>
+            <button type="button" onclick="window.close()">취소</button>
+        </p>
+        <script src="../js/order.js"></script>
+        <script src="../js/model.js"></script>
+    </div>
+    <button class="exit-button" id="none-hover" type="button" onclick="window.close()">
+        <img src="../assets/close.png"/>
+      </button>
+</body>
+</html>

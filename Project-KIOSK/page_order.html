@@ -5,29 +5,186 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css"/>
-    <title>PB-KIOSK</title>
+    <title>CAFE-KIOSK</title>
+    <style>
+       @font-face {
+           font-family: 'BMJUA';
+           src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+           font-weight: normal;
+           font-style: normal;
+       }
+
+       @font-face {
+           font-family: 'DNFBitBitv2';
+           font-style: normal; 
+           font-weight: 400; 
+           src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf') format('opentype');
+       }
+
+       .font {
+           font-family: 'DNFBitBitv2', sans-serif;
+           color: #FFB834;
+           text-shadow: 2px 4px 4px #783E19;
+           margin-top: 150px; 
+          
+           font-size: 120px ;
+           
+       }
+
+       .font1 {
+           font-family: 'BMJUA';
+       }
+
+       body {
+           background-color: #ffffff;
+       }
+
+       #first-container {
+           background-color: #BA9470; 
+           padding: 20px;
+           text-align: center;
+           width: fit-content;
+           margin: 0 auto;
+           background-size: 1080px 1920px; /*배경 크기설정*/
+       }
+
+       .button-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+       }
+
+       button {
+    background-color: #ffffff; /* 버튼 배경색 */
+    color: #5e7153; /* 버튼 글자색 */
+    border: 2px solid black; /* 검정색 테두리 */
+    padding: 0; /* 여백 초기화 */
+    width: 140px; /* 너비 자동 설정 */
+    height: 70px; /* 높이 자동 설정 */
+    font-size: 24px; /* 텍스트 크기 조정 */
+    cursor: pointer; /* 커서 모양 */
+    border-radius: 0; /* 직사각형 모양 */
+    box-shadow: none; /* 그림자 제거 */
+    font-family: 'BMJUA'; /* 여기서 글꼴을 설정 */
+    display: inline-block; /* 텍스트 크기에 따라 버튼 크기가 조정되도록 인라인 블록 요소로 설정 */
+    line-height: 70px; /* 텍스트 세로 중앙 정렬을 위해 버튼의 높이와 동일한 값으로 설정 */
+    margin: 5px;/*버튼간의 여백추가*/
+}
+       button:hover {
+           background-color: #e2a217; /* 호버 시 배경색 */
+           
+       }
+       .coffee-contalner {
+
+       
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+       }
+
+       .coffee-item {
+           text-align: center; /* 텍스트 중앙 정렬 */
+           flex: 1 1 calc(33.333% - 20px); /* 한 줄에 3개씩 배치하기 위한 계산 */
+           box-sizing: border-box; /* 패딩과 보더를 포함하여 크기를 계산 */
+       }
+
+       .coffee-item img {
+           width: 150px;
+           height: 150px;
+       }
+       .coffee-item img {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin:0 auto 10px; /*이미지ㅐ 아래에 여백 추가*/
+
+       }
+       .coffee-item p {
+        font-family: 'BMJUA';
+        font-size: 20px;
+        color: #5e7153;
+        margin: 5px 0;
+       }
+    </style>
 </head>
 <body>
     <div id="first-container">
-        <img src="assets/PB_Marque_Emblem.png" style="margin-top: 7%"/>
-        <p style="font-size: 150%; color: black" >PB KIOSK<br>파리바게트 키오스크</p>
-        <div id="webcam-container"></div>
-        <div id="label-container"></div>
-        <p>
-            <button id="btn" type="button" onclick="changeBtnState()">Start</button>
-        </p>
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-        <script src="js/model.js"></script>
+        <p class="font" >cafe.js</p> 
+
+        <!-- 첫 번째 비디오: 페이지가 로드되면 자동으로 재생되고, 음소거 상태이며, 플레이어 인터페이스 없이 재생됨 -->
+        <video id="first-video" src="assets/853761-hd_1920_1080_25fps.mp4" style="margin-top: 7%; width: 980px; height: 525px;"  autoplay muted loop></video>
+        
+        
+
+        
+            
+            <div class="button-container">
+                <!-- 6개의 주문하기 버튼 추가 -->
+                <button class="font1" type="button" onclick="location.href='page_order1.html'">추천메뉴 </button> 
+                <button class="font1" type="button" onclick="location.href='page_order2.html'">커피 </button> 
+                <button class="font1" type="button" onclick="location.href='page_order3.html'">디카페인</button> 
+                <button class="font1" type="button" onclick="location.href='page_order4.html'">스무디</button> 
+                <button class="font1" type="button" onclick="location.href='page_order5.html'">티&에이드</button> 
+                <button class="font1" type="button" onclick="location.href='page_order6.html'">디저트</button> 
+            </div>
+
+            <div class="coffee-contalner">
+                <div class="coffee-item">
+                    <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아메리카노">
+                    <p>아메리카노</p>
+                    <p>4000원</p>
+                </div>
+                <div class="coffee-item">
+                <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아이스 아메리카노">
+                <p>아이스 아메리카노</p>
+                <p>4500원</p>
+            </div>
+            <div class="coffee-item">
+                <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아이스 바닐라라떼">
+                <p>아이스 바닐라 라떼</p>
+                <p>4500원</p>
+            </div>
+
+            <div class="coffee-item">
+                <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아메리카노1">
+                <p>아메리카노1</p>
+                <p>4000원</p>
+            </div>
+            <div class="coffee-item">
+            <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아이스 아메리카노1">
+            <p>아이스 아메리카노1</p>
+            <p>4500원</p>
+        </div>
+        <div class="coffee-item">
+            <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아이스 바닐라라떼1">
+            <p>아이스 바닐라 라떼1</p>
+            <p>4500원</p>
+        </div>
+        <div class="coffee-item">
+            <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아메리카노2">
+            <p>아메리카노2</p>
+            <p>4000원</p>
+        </div>
+        <div class="coffee-item">
+        <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아이스 아메리카노2">
+        <p>아이스 아메리카노2</p>
+        <p>4500원</p>
     </div>
-    <button id="orderBtn" type="button" onclick="popupForm()">💰</button>
-    <script type="text/javascript">
-        function popupForm() {
-            var url = "popup/popup_form.html";
-            var name = "childPopupForm";
-            var option = "width = 500, height = 500, top = 100, left = 200, location = no";
-            window.open(url, name, option);
-        }
-    </script>
+    <div class="coffee-item">
+        <img src="assets/Monica_Monica_2024-06-07_16_53_08.png" alt="아이스 바닐라라떼2">
+        <p>아이스 바닐라 라떼2</p>
+        <p>4500원</p>
+    </div>
+        
+
+            <!-- 추가 커피 항목들을 여기에 추가할 수 있습니다.-->
+            </div>
+         </div>
+
+   
 </body>
 </html>
